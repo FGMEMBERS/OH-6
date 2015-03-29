@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+********************************************************************************
+* OH-6 Cayuse - Model file
+********************************************************************************
+-->
+
+<PropertyList>
+  
+  <path>OH-6.ac</path>
+
+  <!-- Nasal loads and unloads -->
+  
+  <nasal>
+    <load>
+      var livery_update = aircraft.livery_update.new("Aircraft/OH-6/Models/Liveries");
+    </load>
+    <unload>
+      livery_update.stop();
+    </unload>
+  </nasal>
+
+  <!-- ## Cockpit ## -->
+  
+  <!--<model>
+    <name>cockpit</name>
+    <path>Aircraft/OH-6/Models/cockpit.ac</path>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>-->
+
+  <!-- Lights -->
+
+  <model>
+    <path>Aircraft/OH-6/Models/Lights/beacon.xml</path>
+    <offsets>
+      <x-m>6.05</x-m>
+      <y-m>0.2</y-m>
+      <z-m>0.795</z-m>
+    </offsets>
+  </model>
+  
+  <!-- Instruments -->
+  
+  <!-- Altimeter -->
+  
+  <model>
+    <name>Altimeter</name>
+    <path>Aircraft/Instruments-3d/alt-2/alt2-3d.xml</path>
+    <offsets>
+      <x-m>-1.76</x-m>
+      <y-m>0.18</y-m>
+      <z-m>0.43</z-m>
+    </offsets>
+  </model>
+
+  <!-- Ai -->
+
+  <model>
+    <name>Ai</name>
+    <path>Aircraft/Instruments-3d/ai/ai.xml</path>
+    <offsets>
+      <x-m>-1.755</x-m>
+      <y-m>0.08</y-m>
+      <z-m>0.43</z-m>
+    </offsets>
+  </model>
+
+  <!-- Clock -->
+
+  <model>
+    <name>Clock</name>
+    <path>Aircraft/Instruments-3d/chronograph/chronograph.xml</path>
+    <offsets>
+      <x-m>-1.755</x-m>
+      <y-m>0.18</y-m>
+      <z-m>0.33</z-m>
+    </offsets>
+  </model>
+
+<!-- Adf -->
+
+  <model>
+    <name>Adf</name>
+    <path>Aircraft/Instruments-3d/adf/adf.xml</path>
+    <offsets>
+      <x-m>-1.755</x-m>
+      <y-m>0.08</y-m>
+      <z-m>0.33</z-m>
+    </offsets>
+  </model>
+
+<!-- Asi -->
+
+  <model>
+    <name>Asi</name>
+    <path>Aircraft/OH-6/Models/Instruments/asi/asi.xml</path>
+    <offsets>
+      <x-m>-1.755</x-m>
+      <y-m>-0.02</y-m>
+      <z-m>0.43</z-m>
+    </offsets>
+  </model>
+
+  <!-- ## Effects ## -->
+
+<!-- REFLECTION -->
+   <effect>
+       <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
+       <object-name>Aileron</object-name>
+       <object-name>Base_tail_rotor</object-name>
+       <object-name>Bottom_Rudder</object-name>
+       <object-name>Fuselage</object-name>
+       <object-name>Skid</object-name>
+       <object-name>Up_Rudder</object-name>
+   </effect>
+  
+  <!-- Air particles -->
+  
+  <model>
+    <name>Air Particles</name>
+    <path>Aircraft/OH-6/Models/Effects/air.xml</path>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>-1.2</z-m>
+      <roll-deg>0</roll-deg>
+      <pitch-deg>0</pitch-deg>
+      <heading-deg>0</heading-deg>
+    </offsets>
+  </model>
+
+  <!-- Shadows -->
+
+  <animation>
+    <type>select</type>
+    <object-name>shadow_fuselage</object-name>
+    <condition>
+      <not>
+        <property>/sim/rendering/shadows-ac</property>
+      </not>
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <name>fu_pitch</name>
+    <object-name>shadow_fuselage</object-name>
+    <property>orientation/pitch-deg</property>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <name>fu_roll</name>
+    <object-name>shadow_fuselage</object-name>
+    <property>orientation/roll-deg</property>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>translate</type>
+    <name>fu_trans</name>
+    <object-name>shadow_fuselage</object-name>
+    <property>position/gear-agl-m</property>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>-1</z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <name>fu_select</name>
+    <object-name>shadow_fuselage</object-name>
+    <condition>
+      <property>sim/model/OH-6/shadow</property>
+    </condition>
+  </animation>
+  
+  <!-- Rotor -->	
+  <model>
+    <name>mainrotor</name>
+    <path>Aircraft/OH-6/Models/rotoranimation.xml</path>  
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>    
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+  
+  <!-- Materials -->
+  
+  <animation>
+    <!-- Normal objects -->
+    <object-name>Aileron</object-name>
+    <object-name>Base_tail_rotor</object-name>
+    <object-name>Bottom_Rudder</object-name>
+    <object-name>Fuselage</object-name>
+    <object-name>Skid</object-name>
+    <object-name>Up_Rudder</object-name>
+    
+    <!-- Transparents objects -->
+    <object-name>GlassTop</object-name>
+    <object-name>GlassUp</object-name>
+  </animation>
+
+  <!--<animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>glass_shader.png</texture>
+    <object-name>Glass_bottom</object-name>
+    <object-name>Glass_front</object-name>
+    <object-name>Glass_lateral</object-name>
+    <object-name>Glass_top</object-name>
+    <object-name>Glass_window_left</object-name>
+    <object-name>Glass_window_right</object-name>
+    <object-name>WindowGlass</object-name>
+  </animation>-->
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>GlassTop</object-name>
+    <object-name>GlassUp</object-name>
+  </animation>
+  
+  <animation>
+      <type>material</type>
+    <object-name>Aileron</object-name>
+    <object-name>Base_tail_rotor</object-name>
+    <object-name>Bottom_Rudder</object-name>
+    <object-name>Fuselage</object-name>
+    <object-name>Skid</object-name>
+    <object-name>Up_Rudder</object-name>
+      
+      <property-base>sim/model/livery</property-base>
+      <texture-prop>texture</texture-prop>
+      <texture>texture.png</texture>
+      
+      <specular>
+        <red-prop>specular/red</red-prop>
+        <green-prop>specular/green</green-prop>
+        <blue-prop>specular/blue</blue-prop>
+      </specular>
+      
+      <emission>
+        <red-prop>emission/red</red-prop>
+        <green-prop>emission/green</green-prop>
+        <blue-prop>emission/blue</blue-prop>
+      </emission>
+
+  </animation>
+
+	<!-- tail rotor disc -->
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Base_tail_rotor</object-name>
+		<offset-deg>4.6</offset-deg>
+		<center>
+			<x-m>5.856</x-m>
+			<y-m>0</y-m>
+			<z-m>0.795</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Blades_tail_rotor</object-name>
+		<offset-deg>4.6</offset-deg>
+		<center>
+			<x-m>5.856</x-m>
+			<y-m>0</y-m>
+			<z-m>0.795</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Tail_rotor_disc</object-name>
+		<offset-deg>4.6</offset-deg>
+		<center>
+			<x-m>5.856</x-m>
+			<y-m>0</y-m>
+			<z-m>0.795</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<!--<animation>
+		<type>material</type>
+		<object-name>main_rotor_blades</object-name>
+		<object-name>main_rotor_disc</object-name>
+		<object-name>rotor_disc_T</object-name>
+		<texture-prop>sim/model/bo105/material/rotor/texture</texture-prop>
+	</animation>-->
+
+	<animation>
+		<type>material</type>
+		<object-name>Tail_rotor_disc</object-name>
+		<transparency>
+			<alpha-prop>rotors/tail/rpm</alpha-prop>
+			<factor>0.0015</factor>
+			<offset>-0.2</offset>
+			<max>0.55</max>
+		</transparency>
+		<threshold>0.001</threshold>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Tail_rotor_disc</object-name>
+		<property>rotors/tail/blade[0]/position-deg</property>
+		<center>
+			<x-m>5.856</x-m>
+			<y-m>0</y-m>
+			<z-m>0.795</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Blades_tail_rotor</object-name>
+		<property>rotors/tail/blade[0]/position-deg</property>
+		<center>
+			<x-m>5.856</x-m>
+			<y-m>0</y-m>
+			<z-m>0.795</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>noshadow</type>
+		<object-name>Tail_rotor_disc</object-name>
+	</animation>
+
+	<!-- tail rotor blades -->
+
+	<animation>
+		<type>material</type>
+		<object-name>Blades_tail_rotor</object-name>
+		<transparency>
+			<alpha-prop>rotors/tail/rpm</alpha-prop>
+			<factor>-0.0015</factor>
+			<offset>1</offset>
+		</transparency>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Base_tail_rotor</object-name>
+		<property>rotors/tail/blade[0]/position-deg</property>
+		<center>
+			<x-m>5.856</x-m>
+			<y-m>0</y-m>
+			<z-m>0.795</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+
+</PropertyList>
+

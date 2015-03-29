@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!--
+********************************************************************************
+* OH-6 Cayuse - Help file
+********************************************************************************
+-->
+
+<PropertyList>
+
+  <title>OH-6 Cayuse</title>
+
+  <key>
+    <name>{</name>
+    <desc>Decrease magnetos</desc>
+  </key>
+  <key>
+    <name>}</name>
+    <desc>Increase magnetos</desc>
+  </key>
+  <key>
+    <name>s</name>
+    <desc>Start engines</desc>
+  </key>
+  <line>Some history</line>
+  <line>============</line>
+  <line></line>
+  <line>The Hughes Helicopters OH-6 Cayuse (nicknamed "Loach", after the requirement</line>
+  <line>acronym LOH - light Observation Helicopter) is a single-engine light</line>
+  <line>helicopter with a four-bladed main rotor used for personnel transport,</line>
+  <line>escort and attack missions, and observation. Hughes also developed the</line>
+  <line>Model 369 as a civilian helicopter, the Hughes Model 500, currently produced</line>
+  <line>by MD Helicopters.</line>
+
+</PropertyList>

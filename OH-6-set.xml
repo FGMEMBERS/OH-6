@@ -1,0 +1,213 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!--
+********************************************************************************
+* OH-6 Cayuse - Main file
+* 
+* By icecode and Star
+********************************************************************************
+-->
+
+<PropertyList>
+  <sim>
+    
+    <!-- General options -->
+
+    <description>Hughes OH-6 Cayuse</description>
+    <status>production</status>
+    <aircraft-version>0.3</aircraft-version>
+    <author>Icecode and Star (Main developers)</author>
+    
+    <flight-model>yasim</flight-model>
+    <aero>OH-6-yasim</aero>
+    <fuel-fraction>0.5</fuel-fraction>
+    
+    <!-- Startup -->
+
+    <startup>
+      <splash-texture>Aircraft/OH-6/Splash.png</splash-texture>
+    </startup>
+    
+    <!-- Models and sounds -->
+
+    <model>
+      <path>Aircraft/OH-6/Models/OH-6.xml</path>
+      <livery>
+        <file type="string">Default</file>
+      </livery>
+      <OH-6>
+        <state type="int">0</state>
+        <engine type="float">0.0</engine>
+        <rotor-step-deg type="float">-1.0</rotor-step-deg>
+      </OH-6>
+    </model>
+    
+    <sound>
+      <path>Aircraft/OH-6/Sounds/OH-6-sound.xml</path>
+    </sound>
+
+    <panel>
+      <visibility archive="y">false</visibility>
+    </panel>
+ 
+    <virtual-cockpit archive="y">true</virtual-cockpit>
+    <allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
+
+    <!-- Views -->
+
+    <view n="0">
+      <name>Pilot View</name>
+      <type>lookfrom</type>
+      <internal archive="y">true</internal>
+      <config>
+        <x-offset-m archive="y">0.4</x-offset-m>
+        <y-offset-m archive="y">0.6</y-offset-m>
+        <z-offset-m archive="y">-1.35</z-offset-m>
+        <pitch-offset-deg>-10</pitch-offset-deg>
+        <default-field-of-view-deg>67.0</default-field-of-view-deg>
+      </config>
+    </view>
+
+    <view n="100">
+      <name>Co-pilot View</name>
+      <type>lookfrom</type>
+      <internal type="bool">true</internal>
+      <config>
+        <from-model type="bool">false</from-model>
+        <from-model-idx type="int">0</from-model-idx>
+        <eye-lat-deg-path>/position/latitude-deg</eye-lat-deg-path>
+        <eye-lon-deg-path>/position/longitude-deg</eye-lon-deg-path>
+        <eye-alt-ft-path>/position/altitude-ft</eye-alt-ft-path>
+        <eye-heading-deg-path>/orientation/heading-deg</eye-heading-deg-path>
+        <eye-pitch-deg-path>/orientation/pitch-deg</eye-pitch-deg-path>
+        <eye-roll-deg-path>/orientation/roll-deg</eye-roll-deg-path>
+        <ground-level-nearplane-m type="double">6f</ground-level-nearplane-m>
+        <x-offset-m archive="y">-0.4</x-offset-m>
+        <y-offset-m archive="y">0.6</y-offset-m>
+        <z-offset-m archive="y">-1.35</z-offset-m>
+        <pitch-offset-deg>-10</pitch-offset-deg>
+        <default-field-of-view-deg type="double">65.0</default-field-of-view-deg>
+      </config>
+      <dynamic>
+        <enabled type="bool">false</enabled>
+      </dynamic>
+    </view>
+
+    <view n="101">
+      <name>Passenger View</name>
+      <type>lookfrom</type>
+      <internal type="bool">true</internal>
+      <config>
+        <from-model type="bool">false</from-model>
+        <from-model-idx type="int">0</from-model-idx>
+        <eye-lat-deg-path>/position/latitude-deg</eye-lat-deg-path>
+        <eye-lon-deg-path>/position/longitude-deg</eye-lon-deg-path>
+        <eye-alt-ft-path>/position/altitude-ft</eye-alt-ft-path>
+        <eye-heading-deg-path>/orientation/heading-deg</eye-heading-deg-path>
+        <eye-pitch-deg-path>/orientation/pitch-deg</eye-pitch-deg-path>
+        <eye-roll-deg-path>/orientation/roll-deg</eye-roll-deg-path>
+        <ground-level-nearplane-m type="double">6f</ground-level-nearplane-m>
+        <x-offset-m archive="y">0.0</x-offset-m>
+        <y-offset-m archive="y">0.6</y-offset-m>
+        <z-offset-m archive="y">0</z-offset-m>
+        <pitch-offset-deg>-10</pitch-offset-deg>
+        <default-field-of-view-deg type="double">65.0</default-field-of-view-deg>
+      </config>
+      <dynamic>
+        <enabled type="bool">false</enabled>
+      </dynamic>
+    </view>
+
+
+    <!-- Menu and help -->
+    
+    <menubar include="Dialogs/OH-6-menubar.xml"/>
+    <help include="Dialogs/OH-6-help.xml"/>
+    
+    <!-- Weights -->
+    
+    <weight n="0">
+      <name>Pilot</name>
+      <weight-lb>175</weight-lb>
+      <max-lb>200</max-lb>
+    </weight>
+    
+    <weight n="1">
+      <name>Co-pilot</name>
+      <weight-lb>175</weight-lb>
+      <max-lb>200</max-lb>
+    </weight>
+
+    <!--Lights-->
+    <lighting>
+			<strobe type="bool">true</strobe>
+			<beacon type="bool">true</beacon>
+			<nav-lights type="bool">true</nav-lights>
+    </lighting>   
+    
+    <!-- Consumables tanks -->
+
+    <consumables>
+      <fuel>
+        <tank>
+          <name>Main</name>
+          <selected type="bool" write="n">1</selected>
+          <density-ppg type="double" write="n">6.682</density-ppg>
+        </tank>
+        <tank>
+          <name>Supply</name>
+          <selected type="bool" write="n">1</selected>
+          <density-ppg type="double" write="n">6.682</density-ppg>
+        </tank>
+      </fuel>
+	</consumables>
+
+  </sim>
+  
+  <!-- Controls and keys -->
+
+  <controls>
+   <engines>
+      <engine n="0">
+        <magnetos>0</magnetos>
+      </engine>
+      <engine n="1">
+        <magnetos>0</magnetos>
+      </engine>
+    </engines>
+    <gear>
+      <brake-parking>1</brake-parking>
+    </gear>
+    <rotor>
+      <reltarget>1</reltarget>
+      <maxreltorque>1</maxreltorque>
+    </rotor>
+  </controls>
+
+  <input>
+    <keyboard include="Nasal/OH-6-keys.xml"/>
+  </input>
+
+  <!-- Nasal -->
+
+  <nasal>
+    <OH-6>
+      <file>Aircraft/OH-6/Nasal/OH-6.nas</file>
+      <file>Aircraft/OH-6/Nasal/liveries.nas</file>
+    </OH-6>
+    <walk>
+      <file>Aircraft/OH-6/Nasal/walk.nas</file>
+    </walk>
+    <chronograph>
+      <file>Aircraft/Instruments-3d/chronograph/chronograph.nas</file>
+    </chronograph>
+  </nasal>
+
+  <rotors>
+    <main>
+      <rpm type="double">0</rpm>
+    </main>
+  </rotors>
+
+</PropertyList>
+

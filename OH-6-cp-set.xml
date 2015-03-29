@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!--
+********************************************************************************
+* OH-6 Cayuse Co-pilot - Main file
+* 
+* By icecode and Star
+********************************************************************************
+-->
+
+<!--
+Usage: fgfs - -prop:/sim/remote/pilot-callsign="remote pilot callsign" - -aircraft=OH-6-cp
+-->
+
+<PropertyList>
+
+  <sim>
+
+    <description>Hughes OH-6 Cayuse (Co-pilot)</description>
+    <status>production</status>
+    <author>Icecode and Star (Main developers)</author>
+
+    <flight-model>null</flight-model>
+
+    <sound>
+      <path>Aircraft/OH-6/Sounds/OH-6-sound.xml</path>
+    </sound>
+
+    <startup>
+      <splash-texture>Aircraft/OH-6/Splash.png</splash-texture>
+    </startup>
+
+    <model>
+      <path>Aircraft/OH-6/Models/OH-6-cp.xml</path>
+    </model>	
+
+    <hud>   
+      <enable3d>false</enable3d>
+    </hud>
+
+    <!-- Views -->
+
+    <view n="0">
+      <name>Co-pilot View</name>
+      <type>lookfrom</type>
+      <internal type="bool">true</internal>
+      <config>
+        <from-model type="bool">false</from-model>
+        <from-model-idx type="int">0</from-model-idx>
+        <eye-lat-deg-path>/position/latitude-deg</eye-lat-deg-path>
+        <eye-lon-deg-path>/position/longitude-deg</eye-lon-deg-path>
+        <eye-alt-ft-path>/position/altitude-ft</eye-alt-ft-path>
+        <eye-heading-deg-path>/orientation/heading-deg</eye-heading-deg-path>
+        <eye-pitch-deg-path>/orientation/pitch-deg</eye-pitch-deg-path>
+        <eye-roll-deg-path>/orientation/roll-deg</eye-roll-deg-path>
+        <ground-level-nearplane-m type="double">6f</ground-level-nearplane-m>
+        <x-offset-m archive="y">-0.4</x-offset-m>
+        <y-offset-m archive="y">0.6</y-offset-m>
+        <z-offset-m archive="y">-1.35</z-offset-m>
+        <pitch-offset-deg>-10</pitch-offset-deg>
+        <default-field-of-view-deg type="double">65.0</default-field-of-view-deg>
+      </config>
+      <dynamic>
+        <enabled type="bool">false</enabled>
+      </dynamic>
+    </view>
+
+    <help>
+
+      <title>OH-6 Cayuse (Co-pilot)</title>
+
+      <line></line>
+      <line>This is the co-pilot of the OH-6 Cayuse Aircraft, modified by</line>
+      <line>icecode and Star. The real one is make by Anders Gidenstam.</line>
+      <line>----------------------------------------------------------------------</line>
+      <line>This aircraft doesn't have a lot of things, you can only see what</line>
+      <line>the pilot of the aircraft you connect is doing.</line>
+      <line>----------------------------------------------------------------------</line>
+      <line>For the moment, the co-pilot doesn't have functional instruments, so</line>
+      <line>you can only see the landscape. :) But when the pilot's cockpit is finished,</line>
+      <line>we are going to do the co-pilot's instruments.</line>
+      <line></line>
+      <line>Good luck and nice flying!</line>
+
+    </help>
+
+    <menubar>
+      <default>
+
+        <menu n="10">
+          <label>OH-6 (Co-pilot)</label>
+          <enabled type="bool">true</enabled>
+
+          <item>
+            <label>Select MP-pilot</label>
+            <binding>
+              <command>nasal</command>
+              <script>
+                dual_control_tools.copilot_dialog.show(aircraft_dual_control.pilot_type);
+              </script>
+            </binding>
+          </item>
+          
+        </menu>
+      </default>
+    </menubar>
+
+  </sim>
+
+  <nasal>
+    <dual_control_tools>
+      <file>Aircraft/Generic/DualControl/dual-control-tools.nas</file>
+    </dual_control_tools>
+    <aircraft_dual_control>
+      <file>Aircraft/OH-6/DualControl/OH-6-dual-control.nas</file>
+    </aircraft_dual_control>
+    <dual_control>
+      <file>Aircraft/Generic/DualControl/copilot-dual-control.nas</file>
+    </dual_control>
+  </nasal>
+
+</PropertyList>

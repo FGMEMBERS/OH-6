@@ -1,0 +1,244 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<path>rotor.ac</path>
+	<offsets>
+		<z-m>0.0</z-m>
+		<y-m>0</y-m>
+		<x-m>0</x-m>
+
+		<pitch-deg>0</pitch-deg>
+		
+	</offsets>
+
+ 	<params>
+		<flap>
+			<factor>0.32</factor>
+		</flap>
+		<flapA>
+			<factor>0.33</factor>
+		</flapA>
+		<flapB>
+			<factor>0.37</factor>
+		</flapB>
+		<flapC>
+			<factor>0.35</factor>
+		</flapC>
+		<flapD>
+			<factor>0.37</factor>
+		</flapD>
+	
+		<flap2>
+			<factor>0.32</factor>
+		</flap2>
+		<flap2A>
+			<factor>0.33</factor>
+		</flap2A>
+		<flap2B>
+			<factor>0.37</factor>
+		</flap2B>
+		<flap2C>
+			<factor>0.35</factor>
+		</flap2C>
+		<flap2D>
+			<factor>0.37</factor>
+		</flap2D>
+	</params>
+
+<animation>
+		<name>mainrotors</name>
+		<object-name>blade1a</object-name>
+		<object-name>blade1b</object-name>
+		<object-name>blade1c</object-name>
+		<object-name>blade1d</object-name>
+		<object-name>blade1e</object-name>
+		<object-name>blade1f</object-name>
+		<object-name>blade2a</object-name>
+		<object-name>blade2b</object-name>
+		<object-name>blade2c</object-name>
+		<object-name>blade2d</object-name>
+		<object-name>blade2e</object-name>
+		<object-name>blade2f</object-name>
+		<object-name>blade3a</object-name>
+		<object-name>blade3b</object-name>
+		<object-name>blade3c</object-name>
+		<object-name>blade3d</object-name>
+		<object-name>blade3e</object-name>
+		<object-name>blade3f</object-name>
+		<object-name>blade4a</object-name>
+		<object-name>blade4b</object-name>
+		<object-name>blade4c</object-name>
+		<object-name>blade4d</object-name>
+		<object-name>blade4e</object-name>
+		<object-name>blade4f</object-name>
+</animation>
+	
+
+	<!--main rotor (always visible parts) -->
+
+<animation>
+		<type>spin</type>
+		<object-name>Main</object-name>
+		<object-name>Base</object-name>
+		<property>rotors/main/rpm</property>
+		<factor>1</factor>
+		<center>
+			<x-m>0.005002</x-m>
+			<y-m>-0.000831</y-m>
+			<z-m>-0.001126</z-m>
+		</center>
+		<axis>
+			<x>-0.00275</x>
+			<y>0.000831</y>
+			<z>-0.856149</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>spin</type>
+		<object-name>blade1a</object-name>
+		<object-name>blade1b</object-name>
+		<object-name>blade1c</object-name>
+		<object-name>blade1d</object-name>
+		<object-name>blade1e</object-name>
+		<object-name>blade1f</object-name>
+		<object-name>blade2a</object-name>
+		<object-name>blade2b</object-name>
+		<object-name>blade2c</object-name>
+		<object-name>blade2d</object-name>
+		<object-name>blade2e</object-name>
+		<object-name>blade2f</object-name>
+		<object-name>blade3a</object-name>
+		<object-name>blade3b</object-name>
+		<object-name>blade3c</object-name>
+		<object-name>blade3d</object-name>
+		<object-name>blade3e</object-name>
+		<object-name>blade3f</object-name>
+		<object-name>blade4a</object-name>
+		<object-name>blade4b</object-name>
+		<object-name>blade4c</object-name>
+		<object-name>blade4d</object-name>
+		<object-name>blade4e</object-name>
+		<object-name>blade4f</object-name>
+		<property>rotors/main/rpm</property>
+		<factor>1</factor>
+		<center>
+			<x-m>0.005002</x-m>
+			<y-m>-0.000831</y-m>
+			<z-m>-0.001126</z-m>
+		</center>
+		<axis>
+			<x>-0.00275</x>
+			<y>0.000831</y>
+			<z>-0.856149</z>
+		</axis>
+	</animation>
+	
+<animation>
+		<type>spin</type>
+		<object-name>disc1a</object-name>
+		<object-name>disc1b</object-name>
+		<object-name>disc1c</object-name>
+		<object-name>disc1d</object-name>
+		<object-name>disc1e</object-name>
+		<object-name>disc1f</object-name>
+		<object-name>disc2a</object-name>
+		<object-name>disc2b</object-name>
+		<object-name>disc2c</object-name>
+		<object-name>disc2d</object-name>
+		<object-name>disc2e</object-name>
+		<object-name>disc2f</object-name>
+		<object-name>disc3a</object-name>
+		<object-name>disc3b</object-name>
+		<object-name>disc3c</object-name>
+		<object-name>disc3d</object-name>
+		<object-name>disc3e</object-name>
+		<object-name>disc3f</object-name>
+		<object-name>disc4a</object-name>
+		<object-name>disc4b</object-name>
+		<object-name>disc4c</object-name>
+		<object-name>disc4d</object-name>
+		<object-name>disc4e</object-name>
+		<object-name>disc4f</object-name>
+		<property>rotors/main/rpm</property>
+		<factor>1</factor>
+		<center>
+			<x-m>0.005002</x-m>
+			<y-m>-0.000831</y-m>
+			<z-m>-0.001126</z-m>
+		</center>
+		<axis>
+			<x>-0.00275</x>
+			<y>0.000831</y>
+			<z>-0.856149</z>
+		</axis>
+	</animation>
+
+	<!-- main rotor disc -->
+
+
+	<animation>
+		<type>material</type>
+		<object-name>disc1a</object-name>
+		<object-name>disc1b</object-name>
+		<object-name>disc1c</object-name>
+		<object-name>disc1d</object-name>
+		<object-name>disc1e</object-name>
+		<object-name>disc1f</object-name>
+		<object-name>disc2a</object-name>
+		<object-name>disc2b</object-name>
+		<object-name>disc2c</object-name>
+		<object-name>disc2d</object-name>
+		<object-name>disc2e</object-name>
+		<object-name>disc2f</object-name>
+		<object-name>disc3a</object-name>
+		<object-name>disc3b</object-name>
+		<object-name>disc3c</object-name>
+		<object-name>disc3d</object-name>
+		<object-name>disc3e</object-name>
+		<object-name>disc3f</object-name>
+		<object-name>disc4a</object-name>
+		<object-name>disc4b</object-name>
+		<object-name>disc4c</object-name>
+		<object-name>disc4d</object-name>
+		<object-name>disc4e</object-name>
+		<object-name>disc4f</object-name>
+		<transparency>
+			<alpha-prop>rotors/main/rpm</alpha-prop>
+			<factor>0.004</factor>
+			<offset>-0.25</offset>
+			<max>0.4</max>
+		</transparency>
+		<threshold>0.001</threshold>
+	</animation>
+
+
+	<animation>
+		<type>select</type>
+		<object-name>mainrotors</object-name>
+		<condition>
+			<less-than>
+				<property>rotors/main/rpm</property>
+				<value>175</value>
+			</less-than>
+		</condition>
+	</animation>
+
+	
+	<!-- main rotor blades -->
+
+
+	<animation>
+		<type>material</type>
+		<object-name>mainrotors</object-name>
+		<global type="bool">true</global>
+		<transparency>
+			<alpha-prop>rotors/main/rpm</alpha-prop>
+			<factor>-0.0050</factor>
+			<offset>1</offset>
+			<max>1</max>
+		</transparency>
+	</animation>
+
+</PropertyList>

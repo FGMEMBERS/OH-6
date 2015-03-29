@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+********************************************************************************
+* OH-6 Cayuse - Menu file
+********************************************************************************
+-->
+
+<PropertyList>
+  
+  <default>
+    <menu n="100">
+      <label>OH-6 Cayuse</label>
+      <item>
+        <label>Autostart</label>
+        <binding>
+          <command>nasal</command>
+          <script>OH-6.engines(1)</script>
+        </binding>
+      </item>
+      <item>
+        <label>Autoshutdown</label>
+        <binding>
+          <command>nasal</command>
+          <script>OH-6.engines(0)</script>
+        </binding>
+      </item>
+      <item>
+        <label>Configuration</label>
+        <binding>
+          <command>nasal</command>
+          <script>
+            var mal = gui.Dialog.new("/sim/gui/dialogs/OH-6/menu/dialog","Aircraft/OH-6/Dialogs/OH-6-conf.xml");
+            mal.open();
+          </script>
+        </binding>
+      </item>
+      <item>
+        <label>Select Livery</label>
+        <binding>
+          <command>nasal</command>
+          <script>aircraft.livery.dialog.open()</script>
+        </binding>
+      </item>
+    </menu>
+  </default>
+  
+</PropertyList>
+
